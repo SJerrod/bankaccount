@@ -24,6 +24,11 @@ Balance.prototype.withdraw = function() {
   this.newBalance.push(parseInt(this.initialBalance) - parseInt(this.withdraw));
 }
 
+Balance.prototype.deposit = function() {
+  this.deposit = deposit;
+  this.newBalance.push(parseInt(this.initialBalance) - parseInt(this.deposit));
+}
+
 // Business Logic for User
 
 function User (firstName, lastName) {
@@ -37,5 +42,19 @@ User.prototype.fullName = function() {
 
 //User interface Logic
 $(document).ready(function() {
-  $()
+  $("form#new-account").submit(function(event) {
+    event.preventDefault();
+    const inputtedFirstName = $("input#first-name").val();
+    const inputtedLastName = $("input#last-name").val();
+    let inputtedInitialDeposit = $("input#initial-balance").val();
+    let inputtedWithdraw = $("input#withdraw").val();
+    let inputtedDeposit = $("input#deposit").val();
+    $("input#first-name").val("");
+    $("input#last-name").val("");
+    $("input#initial-balance").val("");
+    $("input#withdraw").val("");
+    $("input#deposit").val("");
+    let newBalance = new Balance(inputtedInitialDeposit, inputtedWithdraw, inputtedDeposit)
+    let newAccount = new Account(inputtedFirstName, inputtedLastName, newBalance)
+  })
 })
