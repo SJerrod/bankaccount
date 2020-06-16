@@ -10,18 +10,13 @@ This program will allow you to deposit and withdraw from an account with a displ
 
 ## Setup/Installation Requirements
 
-* _The program should 
-    - Input Example: 
-    - Output Example: 
-
-* _The program should 
-    - Input Example: 
-    - Output Example: 
-
-* _The program should 
-    - Input Example: 
-    - Output Example: 
-
+| Behavior | Input | Output |
+|----------|-------|--------|
+| User can input data and see the corrisponding output | "text" | "text" |
+| Create form that take in initial deposit | 300 | 300 |
+| Create form that will add to account total | +150 | 450 |
+| Create form that will subtract from total | -50 | 400 |
+| Create current balance display |  | 400 |
 ## Known Bugs
 
 None known
